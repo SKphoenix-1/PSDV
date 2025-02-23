@@ -165,51 +165,33 @@ body.dark-theme {
     border-top: 2px solid grey;
     margin: 25px 0;
 }
-
-/* Import a stylish font */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
-
 .code-container {
     position: relative;
-    background: linear-gradient(145deg, #1a1a1a, #222222); /* Soft gradient */
+    background-color: #2d2d2d; /* Soft dark gray */
     color: #e0e0e0;
     border-radius: 10px;
     padding: 15px;
     margin-top: 12px;
     overflow-x: auto;
     font-family: 'JetBrains Mono', monospace;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    border: 1px solid #333;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
 }
 
-/* Smooth Scrollbar Styling */
+/* Scrollbar Styling */
 .code-container::-webkit-scrollbar {
-    height: 6px;
+    height: 8px;
 }
 .code-container::-webkit-scrollbar-thumb {
-    background: #555;
+    background: #444;
     border-radius: 5px;
 }
 .code-container::-webkit-scrollbar-thumb:hover {
-    background: #777;
+    background: #666;
 }
 
-/* Syntax Highlighting Enhancements */
-pre[class*="language-"] {
-    background: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Code Block Styling */
-.code-container code {
-    font-size: 15px;
-    display: block;
-    white-space: pre-wrap;
-}
-
-/* 🎨 Beautiful Color Scheme for Code */
-.token.keyword { color: #ff9d00; font-weight: 600; }   /* Keywords (e.g., function, return) */
+/* Syntax Highlighting */
+.token.keyword { color: #ff9d00; font-weight: 600; }   /* Keywords */
 .token.string { color: #a5e075; }    /* Strings */
 .token.number { color: #e5c07b; }    /* Numbers */
 .token.comment { color: #6a9955; font-style: italic; } /* Comments */
