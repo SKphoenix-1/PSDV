@@ -68,10 +68,10 @@ body.dark-theme {
     padding: 20px 0; /* Adjust padding to move content up */
 }
 
-/* Title & Logo in One Line */
+/* Title & Logo in One Horizontal Line */
 .header-container {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center both items */
     align-items: center;
     gap: 15px; /* Space between title and logo */
 }
@@ -81,7 +81,6 @@ body.dark-theme {
     font-size: 42px;  /* Slightly smaller */
     font-weight: bold;
     color: white;
-    margin-top: 20px;
 }
 
 /* Subtitle */
@@ -89,11 +88,11 @@ body.dark-theme {
     font-size: 24px;
     font-weight: 300;
     color: #bbbbbb;
-    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 /* Cytoscape.js Logo */
 .cytoscape-logo {
-    width: 60px;  /* Adjusted size */
+    width: 50px;  /* Adjusted size */
     height: auto;
 }
