@@ -1,0 +1,54 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('https://assets.telegraphindia.com/telegraph/2022/Jun/1656577304_iitgn-solar.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7); /* Light transparent background for readability */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.main-title {
+    font-size: 50px;
+    color: black;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 24px;
+    color: black;
+    font-weight: 300;
+}
+
+/* Blog Link Styling */
+.blog-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.blog-link:hover {
+    background-color: #333;
+}
