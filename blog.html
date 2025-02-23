@@ -332,6 +332,112 @@ console.log(cytoscape);</code></pre>
                 <li><strong>Click Event (tap):</strong> Clicking a node triggers an **alert** showing its ID.</li>
             </ul>
 
+            <h3>3️⃣ Animated Force-Directed Layout</h3>
+            <p>🎢 Nodes naturally spread out using a physics-based force-directed layout.</p>
+            
+            <div class="code-container">
+                <button class="copy-btn">Copy</button>
+                <button class="run-btn">Run</button>
+                <pre><code class="language-html">
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                &lt;title&gt;Cytoscape.js CoSE Layout&lt;/title&gt;
+                &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.24.0/cytoscape.min.js"&gt;&lt;/script&gt;
+                &lt;style&gt;
+                    #cy {
+                        width: 600px;
+                        height: 400px;
+                        border: 1px solid black;
+                    }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            
+                &lt;h2&gt;Cytoscape.js CoSE Layout Example&lt;/h2&gt;
+                &lt;div id="cy"&gt;&lt;/div&gt;
+            
+                &lt;script&gt;
+                    // Initialize Cytoscape
+                    var cy = cytoscape({
+                        container: document.getElementById('cy'), // Graph container
+            
+                        elements: [ // Nodes and edges
+                            { data: { id: 'A' } },
+                            { data: { id: 'B' } },
+                            { data: { id: 'C' } },
+                            { data: { id: 'D' } },
+                            { data: { id: 'E' } },
+                            { data: { id: 'AB', source: 'A', target: 'B' } },
+                            { data: { id: 'BC', source: 'B', target: 'C' } },
+                            { data: { id: 'CD', source: 'C', target: 'D' } },
+                            { data: { id: 'DE', source: 'D', target: 'E' } }
+                        ],
+            
+                        style: [ // Styling nodes and edges
+                            {
+                                selector: 'node',
+                                style: {
+                                    'background-color': '#e74c3c',
+                                    'label': 'data(id)',
+                                    'color': 'white',
+                                    'text-valign': 'center',
+                                    'text-halign': 'center',
+                                    'font-size': '14px'
+                                }
+                            },
+                            {
+                                selector: 'edge',
+                                style: {
+                                    'width': 2,
+                                    'line-color': '#2c3e50',
+                                    'target-arrow-shape': 'triangle',
+                                    'target-arrow-color': '#2c3e50'
+                                }
+                            }
+                        ]
+                    });
+            
+                    // Apply CoSE Layout
+                    cy.layout({
+                        name: 'cose', // Force-directed layout
+                        animate: true // Animates the layout transition
+                    }).run();
+                &lt;/script&gt;
+            
+            &lt;/body&gt;
+            &lt;/html&gt;
+                </code></pre>
+                <div class="output-container"></div>
+            </div>
+            
+            <h4>Explanation of the Code:</h4>
+            <ul>
+                <li><strong>1️⃣ Cytoscape Initialization (`cytoscape({...})`):</strong>
+                    <ul>
+                        <li>Creates a graph with a set of **nodes** and **edges**.</li>
+                        <li>Nodes are labeled with their **IDs** and styled with **red backgrounds**.</li>
+                        <li>Edges are styled with a **dark gray color** and **arrowheads**.</li>
+                    </ul>
+                </li>
+                <li><strong>2️⃣ Applying the CoSE Layout (`cy.layout({...}).run()`):</strong>
+                    <ul>
+                        <li>The **CoSE (Compound Spring Embedder) layout** is a **force-directed layout**.</li>
+                        <li>It automatically **arranges nodes in an organic manner**.</li>
+                        <li>`animate: true` enables **smooth transitions** when applying the layout.</li>
+                    </ul>
+                </li>
+                <li><strong>3️⃣ Why Use CoSE Layout?</strong>
+                    <ul>
+                        <li>Unlike **grid** or **circle** layouts, **CoSE dynamically arranges nodes** based on **physics-like forces** (spring forces between connected nodes).</li>
+                        <li>It is **ideal for large graphs** because it **minimizes edge crossings**.</li>
+                    </ul>
+                </li>
+            </ul>
+
+
         </section>
     </main>
 
