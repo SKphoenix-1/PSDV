@@ -7,22 +7,72 @@
     box-sizing: border-box;
 }
 
-/* Dark Theme for Blog */
+/* Light Theme (ONLY for index.html - Homepage) */
+body.homepage {
+    background: url('https://assets.telegraphindia.com/telegraph/2022/Jun/1656577304_iitgn-solar.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7); /* Light transparent background for readability */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.main-title, .subtitle {
+    font-weight: 600;
+}
+
+.main-title {
+    font-size: 50px;
+    color: black;
+}
+
+.subtitle {
+    font-size: 24px;
+    color: black;
+    font-weight: 300;
+}
+
+/* Blog Link Styling */
+.blog-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.blog-link:hover {
+    background-color: #333;
+}
+
+/* ------------------------ */
+/* Dark Theme (ONLY for blog.html) */
 body.dark-theme {
     background-color: #121212;
     color: white;
     font-family: 'Poppins', sans-serif;
-    text-align: left; /* Ensuring all content is left-aligned */
+    text-align: center;
     min-height: 100vh;
-    padding: 20px 0;
+    padding: 20px 0; /* Adjust padding to move content up */
 }
 
-/* Main Title */
+/* Main Title in Blog */
 .dark-theme .main-title {
-    font-size: 42px;
+    font-size: 42px;  /* Slightly smaller */
     font-weight: bold;
     color: white;
-    text-align: center;
     margin-top: 20px;
 }
 
@@ -31,7 +81,6 @@ body.dark-theme {
     font-size: 24px;
     font-weight: 300;
     color: #bbbbbb;
-    text-align: center;
     margin-top: 10px;
 }
 
@@ -40,24 +89,25 @@ body.dark-theme {
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 60px;
+    width: 60px;  /* Adjust size as needed */
     height: auto;
 }
 
-/* Content Layout */
+/* Main content layout */
 .content {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-start; /* Align items to the top */
     padding: 20px;
 }
 
-/* Sidebar for Overview and Sections */
+/* Sidebar for Overview and Purpose */
 .sidebar {
-    width: 80%; /* Take up 80% of the screen width */
+    width: 40%; /* Take up 40% of the screen width */
     padding: 20px;
+    text-align: left;
 }
 
-/* Section Headings */
+/* Subheading styles */
 .section-heading {
     font-size: 26px;
     font-weight: bold;
@@ -65,16 +115,7 @@ body.dark-theme {
     margin-bottom: 10px;
 }
 
-/* Subheading */
-.subheading {
-    font-size: 22px;
-    font-weight: bold;
-    color: #dddddd;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-/* Paragraph Text */
+/* Paragraph text */
 .sidebar p {
     font-size: 18px;
     line-height: 1.6;
@@ -82,7 +123,7 @@ body.dark-theme {
     margin-bottom: 15px;
 }
 
-/* List Styles */
+/* List styles */
 .sidebar ul {
     list-style-type: none;
     padding-left: 0;
@@ -98,54 +139,11 @@ body.dark-theme {
     color: white;
 }
 
-/* Grey Divider */
+/* Full-width Dividing Grey Line */
 .divider {
     border: none;
-    border-top: 2px solid grey;
-    margin: 25px 0;
-}
-
-/* Code Container */
-.code-container {
-    position: relative;
-    background-color: #1e1e1e;
-    color: white;
-    border-radius: 5px;
-    padding: 10px;
-    margin-top: 10px;
-    overflow-x: auto;
-}
-
-/* Code Blocks */
-.code-container pre {
-    margin: 0;
-    padding: 10px;
-    font-size: 16px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
-/* Syntax Highlighting */
-.code-container code {
-    font-family: 'Courier New', monospace;
-    display: block;
-    color: #dcdcaa; /* Default color for text */
-}
-
-/* Copy Button */
-.copy-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #444;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.copy-btn:hover {
-    background-color: #666;
+    height: 2px;
+    background-color: grey;
+    width: 90%; /* Ensuring it goes across the width */
+    margin: 40px auto; /* Centering it properly */
 }
