@@ -69,20 +69,24 @@
 console.log(cytoscape);</code></pre>
             </div>
 
-            <h3 class="subheading">4. Basic Configuration & Usage</h3>
-            <p>Once installed, you can create a basic Cytoscape instance inside a <code>&lt;div&gt;</code> container.</p>
+            <hr class="divider">
 
+            <h2 class="section-heading">Key Features and Explanation</h2>
+
+            <h3 class="subheading">1️⃣ Graph Visualization & Layouts</h3>
+            <p>Supports various graph layouts (grid, circle, breadth-first, etc.). Provides real-time updates and animations.</p>
+
+            <h4>Example: Draggable Nodes</h4>
             <div class="code-container">
                 <button class="copy-btn">Copy</button>
-                <pre><code>&lt;!DOCTYPE html&gt;
+                <button class="run-btn">Run</button>
+                <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Basic Cytoscape.js Example&lt;/title&gt;
-    &lt;script src="https://unpkg.com/cytoscape@3.28.0/dist/cytoscape.min.js"&gt;&lt;/script&gt;
-    &lt;style&gt;
-        #cy { width: 600px; height: 400px; border: 1px solid black; }
-    &lt;/style&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.24.0/cytoscape.min.js"&gt;&lt;/script&gt;
+    &lt;style&gt; #cy { width: 100%; height: 500px; border: 1px solid black; } &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;div id="cy"&gt;&lt;/div&gt;
@@ -92,23 +96,103 @@ console.log(cytoscape);</code></pre>
             elements: [
                 { data: { id: 'A' } },
                 { data: { id: 'B' } },
-                { data: { id: 'C' } },
-                { data: { id: 'AB', source: 'A', target: 'B' } },
-                { data: { id: 'BC', source: 'B', target: 'C' } }
+                { data: { id: 'AB', source: 'A', target: 'B' } }
             ],
             style: [
-                { selector: 'node', style: { 'background-color': 'blue', 'label': 'data(id)' } },
-                { selector: 'edge', style: { 'width': 2, 'line-color': 'black' } }
+                { selector: 'node', style: { 'background-color': '#007bff', 'label': 'data(id)', 'color': '#fff' } }
             ],
             layout: { name: 'grid' }
         });
     &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+&lt;/html&gt;
+                </code></pre>
             </div>
+            <div class="output-container"></div>
+
+            <h3 class="subheading">2️⃣ Styling & Customization</h3>
+            <p>Modify node colors, edge styles, and graph themes dynamically.</p>
+
+            <h4>Example: Custom Node Styles</h4>
+            <div class="code-container">
+                <button class="copy-btn">Copy</button>
+                <button class="run-btn">Run</button>
+                <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.24.0/cytoscape.min.js"&gt;&lt;/script&gt;
+    &lt;style&gt; #cy { width: 100%; height: 500px; border: 1px solid black; } &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="cy"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        var cy = cytoscape({
+            container: document.getElementById('cy'),
+            elements: [
+                { data: { id: 'X' } },
+                { data: { id: 'Y' } },
+                { data: { id: 'XY', source: 'X', target: 'Y' } }
+            ],
+            style: [
+                { selector: 'node', style: { 'background-color': '#ff5733', 'label': 'data(id)', 'color': '#fff', 'shape': 'hexagon' } },
+                { selector: 'edge', style: { 'line-color': '#ffbd69', 'width': 4, 'target-arrow-shape': 'triangle' } }
+            ],
+            layout: { name: 'circle' }
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+            </div>
+            <div class="output-container"></div>
+
+            <h3 class="subheading">3️⃣ Interactive Features</h3>
+            <p>Add user interactions like selecting, dragging, and clicking on nodes.</p>
+
+            <h4>Example: Click Event on Nodes</h4>
+            <div class="code-container">
+                <button class="copy-btn">Copy</button>
+                <button class="run-btn">Run</button>
+                <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.24.0/cytoscape.min.js"&gt;&lt;/script&gt;
+    &lt;style&gt; #cy { width: 100%; height: 500px; border: 1px solid black; } &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="cy"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        var cy = cytoscape({
+            container: document.getElementById('cy'),
+            elements: [
+                { data: { id: '1' } },
+                { data: { id: '2' } },
+                { data: { id: '12', source: '1', target: '2' } }
+            ],
+            style: [
+                { selector: 'node', style: { 'background-color': '#28a745', 'label': 'data(id)', 'color': '#fff' } }
+            ],
+            layout: { name: 'grid' }
+        });
+
+        cy.on('tap', 'node', function(evt) {
+            alert('You clicked on node: ' + evt.target.id());
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+            </div>
+            <div class="output-container"></div>
+
         </section>
     </main>
 
-    <script src="assets/copy.js"></script> <!-- JavaScript for Copy Button -->
+    <script src="assets/copy.js"></script>
+    <script src="assets/run.js"></script> 
 </body>
 </html>
