@@ -459,6 +459,33 @@ console.log(cytoscape);</code></pre>
                 <li>🔴 **Node A turns red**, while all other nodes remain **green**.</li>
                 <li>🎯 Great for **highlighting important elements dynamically**.</li>
             </ul>
+            <hr class="divider">
+            <h3>5️⃣ Export Graph as an Image</h3>
+            <p>📸 Save the graph as a PNG image with a button click.</p>
+            
+            <button onclick="download()">Download Graph</button>
+            
+            <div class="code-container">
+                <button class="copy-btn">Copy</button>
+                <pre><code class="language-javascript">
+            &lt;script&gt;
+                function download() {
+                    var png = cy.png(); // Get PNG data
+                    var link = document.createElement('a');
+                    link.setAttribute('href', png);
+                    link.setAttribute('download', 'graph.png');
+                    link.click();
+                }
+            &lt;/script&gt;
+                </code></pre>
+            </div>
+            
+            <h4>✨ Output:</h4>
+            <ul>
+                <li>📥 Clicking the button **downloads the current graph as an image**.</li>
+                <li>📊 Perfect for **report generation and presentations**.</li>
+            </ul>
+
 
         </section>
     </main>
