@@ -179,21 +179,46 @@ console.log(cytoscape);</code></pre>
             &lt;html lang="en"&gt;
             &lt;head&gt;
                 &lt;script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"&gt;&lt;/script&gt;
-                &lt;style&gt; #cy { width: 90vw; height: 70vh; border: 2px solid #ccc; background: white; } &lt;/style&gt;
+                &lt;style&gt; 
+                    #cy { width: 90vw; height: 70vh; border: 2px solid #ccc; background: white; } 
+                &lt;/style&gt;
             &lt;/head&gt;
             &lt;body&gt;
                 &lt;button onclick="setLayout('grid')"&gt;Grid&lt;/button&gt;
                 &lt;button onclick="setLayout('circle')"&gt;Circular&lt;/button&gt;
                 &lt;button onclick="setLayout('breadthfirst')"&gt;Linear&lt;/button&gt;
                 &lt;div id="cy"&gt;&lt;/div&gt;
+                
                 &lt;script&gt;
                     let cy = cytoscape({
                         container: document.getElementById('cy'),
                         elements: [
-                            { data: { id: 'A' } }, { data: { id: 'B' } },
-                            { data: { source: 'A', target: 'B' } }
+                            // Nodes
+                            { data: { id: 'A' } }, { data: { id: 'B' } }, { data: { id: 'C' } },
+                            { data: { id: 'D' } }, { data: { id: 'E' } }, { data: { id: 'F' } },
+                            { data: { id: 'G' } }, { data: { id: 'H' } }, { data: { id: 'I' } },
+                            { data: { id: 'J' } },
+                            
+                            // Edges
+                            { data: { source: 'A', target: 'B' } },
+                            { data: { source: 'B', target: 'C' } },
+                            { data: { source: 'C', target: 'D' } },
+                            { data: { source: 'D', target: 'E' } },
+                            { data: { source: 'E', target: 'F' } },
+                            { data: { source: 'F', target: 'G' } },
+                            { data: { source: 'G', target: 'H' } },
+                            { data: { source: 'H', target: 'I' } },
+                            { data: { source: 'I', target: 'J' } },
+                            { data: { source: 'J', target: 'A' } } // Completing the loop
                         ],
-                        style: [{ selector: 'node', style: { 'background-color': '#007bff', 'label': 'data(id)', 'color': '#fff' } }],
+                        style: [{ 
+                            selector: 'node', 
+                            style: { 
+                                'background-color': '#007bff', 
+                                'label': 'data(id)', 
+                                'color': '#fff' 
+                            } 
+                        }],
                         layout: { name: 'grid' }
                     });
             
@@ -205,8 +230,7 @@ console.log(cytoscape);</code></pre>
             &lt;/html&gt;
                 </code></pre>
                 <div class="output-container"></div>
-            </div>
-            <p><strong>Explanation:</strong> The code creates an interactive graph using Cytoscape.js, allowing users to switch between different node layouts dynamically.</p>
+            </div><p><strong>Explanation:</strong> The code creates an interactive graph using Cytoscape.js, allowing users to switch between different node layouts dynamically.</p>
             <ul>
                 <li><strong>Graph Setup:</strong></li>
                 <ul>
