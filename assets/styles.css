@@ -56,16 +56,24 @@ body:not(.dark-theme) {
 
 /* Dark Theme Background */
 .dark-theme {
-    background-color: #121212;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    position: relative;
+    padding-top: 30px; /* Push content towards the top */
+    min-height: 100vh;
+}
+
+/* Title & Subtitle Styling */
+.main-title {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.subtitle {
+    font-size: 24px;
+    font-weight: 300;
+    color: #bbbbbb;
 }
 
 /* Cytoscape.js Logo */
