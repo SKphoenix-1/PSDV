@@ -139,11 +139,11 @@ body.dark-theme {
     color: white;
 }
 
-/* ✅ Full-width Dividing Grey Line */
+/* Full-width Dividing Grey Line */
 .divider {
     border: none;
     height: 2px;
     background-color: grey;
-    width: 100%; /* Ensuring it spans full width */
-    margin: 40px 0; /* Adjusted margin */
+    width: 90%; /* Ensuring it goes across the width */
+    margin: 40px auto; /* Centering it properly */
 }
