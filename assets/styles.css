@@ -166,60 +166,61 @@ body.dark-theme {
     margin: 25px 0;
 }
 
-/* Code Container */
-/* Code Container Styling */
-/* Code Container */
+/* Import a stylish font */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
+
 .code-container {
     position: relative;
-    background-color: #1e1e1e; /* VS Code Dark Theme */
-    color: #dcdcdc;
-    border-radius: 8px;
+    background: linear-gradient(145deg, #1a1a1a, #222222); /* Soft gradient */
+    color: #e0e0e0;
+    border-radius: 10px;
     padding: 15px;
-    margin-top: 10px;
+    margin-top: 12px;
     overflow-x: auto;
-    font-family: 'Fira Code', monospace;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    border: 1px solid #3c3c3c;
+    font-family: 'JetBrains Mono', monospace;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
 }
 
-/* Custom Scrollbar */
+/* Smooth Scrollbar Styling */
 .code-container::-webkit-scrollbar {
-    height: 8px;
+    height: 6px;
 }
 .code-container::-webkit-scrollbar-thumb {
     background: #555;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 .code-container::-webkit-scrollbar-thumb:hover {
     background: #777;
 }
 
-/* Syntax Highlighting using Prism.js */
+/* Syntax Highlighting Enhancements */
 pre[class*="language-"] {
     background: none;
     padding: 0;
     margin: 0;
 }
 
-/* Code block styles */
+/* Code Block Styling */
 .code-container code {
-    font-size: 16px;
+    font-size: 15px;
     display: block;
     white-space: pre-wrap;
 }
 
-/* Prism.js Syntax Highlighting Colors */
-.token.keyword { color: #569cd6; }   /* Keywords (e.g., function, return) */
-.token.string { color: #ce9178; }    /* Strings */
-.token.number { color: #b5cea8; }    /* Numbers */
+/* 🎨 Beautiful Color Scheme for Code */
+.token.keyword { color: #ff9d00; font-weight: 600; }   /* Keywords (e.g., function, return) */
+.token.string { color: #a5e075; }    /* Strings */
+.token.number { color: #e5c07b; }    /* Numbers */
 .token.comment { color: #6a9955; font-style: italic; } /* Comments */
-.token.function { color: #dcdcaa; }  /* Function names */
-.token.operator { color: #d4d4d4; }  /* Operators */
+.token.function { color: #61afef; font-weight: 600; }  /* Function names */
+.token.operator { color: #ff8c00; }  /* Operators */
 .token.punctuation { color: #d4d4d4; } /* Punctuation */
-.token.variable { color: #9cdcfe; }  /* Variables */
-.token.class-name { color: #4ec9b0; } /* Class Names */
-.token.property { color: #9cdcfe; }  /* Properties */
-.token.tag { color: #569cd6; }       /* HTML Tags */
+.token.variable { color: #c678dd; font-weight: 500; }  /* Variables */
+.token.class-name { color: #ff79c6; font-weight: bold; } /* Class Names */
+.token.property { color: #56b6c2; }  /* Properties */
+.token.tag { color: #e06c75; font-weight: bold; }       /* HTML Tags */
+
 
 /* Clipboard Copy Button */
 .copy-btn {
