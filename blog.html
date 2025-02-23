@@ -20,94 +20,41 @@
             <p>
                 Cytoscape.js is a powerful open-source JavaScript library used for visualizing and analyzing graph-based data.
                 It allows developers to create interactive, customizable, and scalable network visualizations in web applications.
-                The library is part of the larger Cytoscape ecosystem, which includes the Cytoscape desktop application for bioinformatics and other graph-related analyses.
-            </p>
-            <p>
-                Built on modern web technologies, Cytoscape.js supports dynamic graph manipulation, animations, user interactions, and various layout algorithms.
-                It is widely used in fields like bioinformatics, social network analysis, and data visualization.
             </p>
 
-            <hr class="divider">
+            <hr class="divider"> <!-- Fixed Full-Width Line -->
 
             <h2 class="section-heading">Purpose of Cytoscape.js</h2>
             <p>
-                The primary purpose of Cytoscape.js is to enable developers to easily create, manipulate, and visualize complex networks in web applications. Some key objectives include:
+                The primary purpose of Cytoscape.js is to enable developers to easily create, manipulate, and visualize complex networks in web applications.
             </p>
+            
             <ul>
                 <li><strong>Graph Visualization</strong> – Display large-scale networks interactively.</li>
-                <li><strong>Customization</strong> – Offers extensive styling and layout options for graphs.</li>
-                <li><strong>Interactivity</strong> – Supports user interactions like zooming, panning, and selecting nodes/edges.</li>
-                <li><strong>Algorithm Support</strong> – Includes built-in layout and graph analysis algorithms.</li>
-                <li><strong>Performance</strong> – Optimized for handling large graphs efficiently.</li>
-                <li><strong>Integration</strong> – Can be used with various frameworks (React, Angular, Vue) and other libraries like D3.js.</li>
+                <li><strong>Customization</strong> – Extensive styling and layout options.</li>
+                <li><strong>Algorithm Support</strong> – Includes built-in graph algorithms.</li>
             </ul>
 
-            <hr class="divider">
+            <hr class="divider"> <!-- Fixed Full-Width Line -->
 
-            <h2 class="section-heading">Installing and Configuring Cytoscape.js</h2>
+            <h2 class="section-heading">Installing Cytoscape.js</h2>
 
-            <h3 class="subheading">1. Using via CDN (Recommended for Quick Use)</h3>
-            <p>The easiest way to use Cytoscape.js in a web project is by including it via a CDN.</p>
+            <h3 class="subheading">1. Using via CDN</h3>
+            <p>Include Cytoscape.js via CDN:</p>
             
             <div class="code-container">
                 <button class="copy-btn">Copy</button>
                 <pre><code>&lt;script src="https://unpkg.com/cytoscape@3.28.0/dist/cytoscape.min.js"&gt;&lt;/script&gt;</code></pre>
             </div>
 
-            <h3 class="subheading">2. Installing via NPM (For Node.js & Modern Web Apps)</h3>
-            <p>If you’re working with Node.js, React, or other modern frameworks, installing via npm is recommended.</p>
+            <h3 class="subheading">2. Installing via NPM</h3>
+            <p>Install using npm:</p>
             
             <div class="code-container">
                 <button class="copy-btn">Copy</button>
                 <pre><code>npm install cytoscape</code></pre>
             </div>
 
-            <h3 class="subheading">3. Using Cytoscape.js with ES Modules</h3>
-            <p>If your project supports ES Modules, you can directly import Cytoscape.js.</p>
-
-            <div class="code-container">
-                <button class="copy-btn">Copy</button>
-                <pre><code>import cytoscape from 'https://unpkg.com/cytoscape@3.28.0/dist/cytoscape.esm.min.js';
-console.log(cytoscape);</code></pre>
-            </div>
-
-            <h3 class="subheading">4. Basic Configuration & Usage</h3>
-            <p>Once installed, you can create a basic Cytoscape instance inside a <code>&lt;div&gt;</code> container.</p>
-
-            <div class="code-container">
-                <button class="copy-btn">Copy</button>
-                <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Basic Cytoscape.js Example&lt;/title&gt;
-    &lt;script src="https://unpkg.com/cytoscape@3.28.0/dist/cytoscape.min.js"&gt;&lt;/script&gt;
-    &lt;style&gt;
-        #cy { width: 600px; height: 400px; border: 1px solid black; }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div id="cy"&gt;&lt;/div&gt;
-    &lt;script&gt;
-        var cy = cytoscape({
-            container: document.getElementById('cy'),
-            elements: [
-                { data: { id: 'A' } },
-                { data: { id: 'B' } },
-                { data: { id: 'C' } },
-                { data: { id: 'AB', source: 'A', target: 'B' } },
-                { data: { id: 'BC', source: 'B', target: 'C' } }
-            ],
-            style: [
-                { selector: 'node', style: { 'background-color': 'blue', 'label': 'data(id)' } },
-                { selector: 'edge', style: { 'width': 2, 'line-color': 'black' } }
-            ],
-            layout: { name: 'grid' }
-        });
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-            </div>
         </section>
     </main>
 
