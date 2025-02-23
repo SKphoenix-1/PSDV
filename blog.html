@@ -436,7 +436,27 @@ console.log(cytoscape);</code></pre>
                     </ul>
                 </li>
             </ul>
-
+            <h3>4️⃣ Styling Nodes Based on Data Properties</h3>
+            <p>🎨 Change node color dynamically using JSON data.</p>
+            
+            <div class="code-container">
+                <button class="copy-btn">Copy</button>
+                <pre><code class="language-javascript">
+            &lt;script&gt;
+                cy.style().selector('node').style({
+                    'background-color': function(ele){
+                        return ele.data('id') === 'A' ? 'red' : 'green';
+                    }
+                }).update();
+            &lt;/script&gt;
+                </code></pre>
+            </div>
+            
+            <h4>✨ Output:</h4>
+            <ul>
+                <li>🔴 **Node A turns red**, while all other nodes remain **green**.</li>
+                <li>🎯 Great for **highlighting important elements dynamically**.</li>
+            </ul>
 
         </section>
     </main>
