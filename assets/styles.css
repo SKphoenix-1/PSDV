@@ -1,149 +1,26 @@
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Light Theme (ONLY for index.html - Homepage) */
-body.homepage {
-    background: url('https://assets.telegraphindia.com/telegraph/2022/Jun/1656577304_iitgn-solar.jpg') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-}
-
-.container {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.7); /* Light transparent background for readability */
-    padding: 30px;
-    border-radius: 10px;
-}
-
-.main-title, .subtitle {
-    font-weight: 600;
-}
-
-.main-title {
-    font-size: 50px;
-    color: black;
-}
-
-.subtitle {
-    font-size: 24px;
-    color: black;
-    font-weight: 300;
-}
-
-/* Blog Link Styling */
-.blog-link {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: 400;
+.code-container {
+    position: relative;
+    background-color: #2d2d2d;
     color: white;
-    background-color: black;
+    padding: 15px;
     border-radius: 5px;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
-
-.blog-link:hover {
-    background-color: #333;
-}
-
-/* ------------------------ */
-/* Dark Theme (ONLY for blog.html) */
-body.dark-theme {
-    background-color: #121212;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    min-height: 100vh;
-    padding: 20px 0; /* Adjust padding to move content up */
-}
-
-/* Main Title in Blog */
-.dark-theme .main-title {
-    font-size: 42px;  /* Slightly smaller */
-    font-weight: bold;
-    color: white;
-    margin-top: 20px;
-}
-
-/* Subtitle */
-.dark-theme .subtitle {
-    font-size: 24px;
-    font-weight: 300;
-    color: #bbbbbb;
     margin-top: 10px;
+    overflow-x: auto;
 }
 
-/* Cytoscape.js Logo in Right Corner */
-.cytoscape-logo {
+.copy-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 60px;  /* Adjust size as needed */
-    height: auto;
-}
-
-/* Main content layout */
-.content {
-    display: flex;
-    align-items: flex-start; /* Align items to the top */
-    padding: 20px;
-}
-
-/* Sidebar for Overview and Purpose */
-.sidebar {
-    width: 40%; /* Take up 40% of the screen width */
-    padding: 20px;
-    text-align: left;
-}
-
-/* Subheading styles */
-.section-heading {
-    font-size: 26px;
-    font-weight: bold;
+    top: 10px;
+    right: 10px;
+    background: #ff9800;
     color: white;
-    margin-bottom: 10px;
-}
-
-/* Paragraph text */
-.sidebar p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #dddddd;
-    margin-bottom: 15px;
-}
-
-/* List styles */
-.sidebar ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.sidebar ul li {
-    font-size: 18px;
-    color: #dddddd;
-    margin-bottom: 8px;
-}
-
-.sidebar ul li strong {
-    color: white;
-}
-
-/* Full-width Dividing Grey Line */
-.divider {
     border: none;
-    height: 2px;
-    background-color: grey;
-    width: 90%; /* Ensuring it goes across the width */
-    margin: 40px auto; /* Centering it properly */
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.copy-btn:hover {
+    background: #e68900;
 }
