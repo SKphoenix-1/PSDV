@@ -7,6 +7,63 @@
     box-sizing: border-box;
 }
 
+/* === HOMEPAGE STYLES === */
+
+/* Homepage Background Fix */
+.homepage {
+    background: url('https://almashines.s3.dualstack.ap-southeast-1.amazonaws.com/assets/images/cover/102.jpg?v=1589443361') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Semi-transparent overlay */
+.overlay {
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Centered Content Box */
+.container {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Title */
+.main-title {
+    color: black;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Subtitle (Blog Link) */
+.subtitle {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.blog-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blog-link:hover {
+    text-decoration: underline;
+}
+
+/* === BLOG PAGE STYLES === */
+
 /* Dark Theme for Blog */
 body.dark-theme {
     background-color: #121212;
@@ -17,7 +74,7 @@ body.dark-theme {
     padding: 20px 0;
 }
 
-/* Main Title */
+/* Blog Main Title */
 .dark-theme .main-title {
     font-size: 42px;
     font-weight: bold;
@@ -26,7 +83,7 @@ body.dark-theme {
     margin-top: 20px;
 }
 
-/* Subtitle */
+/* Blog Subtitle */
 .dark-theme .subtitle {
     font-size: 24px;
     font-weight: 300;
@@ -44,7 +101,7 @@ body.dark-theme {
     height: auto;
 }
 
-/* Content Layout */
+/* Blog Content Layout */
 .content {
     display: flex;
     align-items: flex-start;
