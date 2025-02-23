@@ -92,3 +92,50 @@ body.dark-theme {
     width: 60px;  /* Adjust size as needed */
     height: auto;
 }
+
+/* Main content layout */
+.content {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    padding: 20px;
+}
+
+/* Sidebar for Overview and Purpose */
+.sidebar {
+    width: 40%; /* Take up 40% of the screen width */
+    padding: 20px;
+    text-align: left;
+}
+
+/* Subheading styles */
+.section-heading {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Paragraph text */
+.sidebar p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #dddddd;
+    margin-bottom: 15px;
+}
+
+/* List styles */
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    font-size: 18px;
+    color: #dddddd;
+    margin-bottom: 8px;
+}
+
+.sidebar ul li strong {
+    color: white;
+}
+
