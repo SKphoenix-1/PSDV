@@ -167,14 +167,14 @@ body.dark-theme {
 }
 .code-container {
     position: relative;
-    background-color: #121212; /* Almost black */
+    background-color: #121212; /* Dark black */
     color: #e0e0e0;
     border-radius: 10px;
     padding: 15px;
     margin-top: 12px;
     overflow-x: auto;
     font-family: 'JetBrains Mono', monospace;
-    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5); /* Neon glow */
+    box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.6); /* Subtle neon glow */
     border: 1px solid #00ffee;
 }
 
@@ -190,18 +190,20 @@ body.dark-theme {
     background: #00ccdd;
 }
 
-/* Syntax Highlighting */
+/* Syntax Highlighting (Refined Neon Theme) */
 .token.keyword { color: #ff0077; font-weight: 600; }   /* Keywords */
-.token.string { color: #00ffee; }    /* Strings */
-.token.number { color: #ffaa00; }    /* Numbers */
-.token.comment { color: #00ff00; font-style: italic; } /* Comments */
-.token.function { color: #0077ff; font-weight: 600; }  /* Function names */
-.token.operator { color: #ff7700; }  /* Operators */
+.token.string { color: #00ffcc; }    /* Strings */
+.token.number { color: #ffbb33; }    /* Numbers */
+.token.comment { color: #33ff33; font-style: italic; } /* Comments */
+.token.function { color: #00aaff; font-weight: 600; }  /* Function names */
+.token.operator { color: #ff6600; }  /* Operators */
 .token.punctuation { color: #ffffff; } /* Punctuation */
-.token.variable { color: #ff00ff; font-weight: 500; }  /* Variables */
-.token.class-name { color: #ff0055; font-weight: bold; } /* Class Names */
+.token.variable { color: #ff66ff; font-weight: 500; }  /* Variables */
+.token.class-name { color: #ff2255; font-weight: bold; } /* Class Names */
 .token.property { color: #00ccff; }  /* Properties */
-.token.tag { color: #ffcc00; font-weight: bold; }       /* HTML Tags */
+.token.tag { color: #ffaa00; font-weight: bold; }       /* HTML Tags */
+.token.attr-name { color: #ffcc00; } /* Attribute Names */
+.token.attr-value { color: #00ffee; } /* Attribute Values */
 
 /* Clipboard Copy Button */
 .copy-btn {
