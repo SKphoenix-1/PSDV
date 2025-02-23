@@ -9,7 +9,7 @@
 
 /* === HOMEPAGE STYLES === */
 
-/* Homepage Background Fix */
+/* Set Fullscreen Background Image */
 .homepage {
     background: url('https://almashines.s3.dualstack.ap-southeast-1.amazonaws.com/assets/images/cover/102.jpg?v=1589443361') no-repeat center center fixed;
     background-size: cover;
@@ -18,11 +18,12 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative;
 }
 
-/* Semi-transparent overlay */
+/* Semi-transparent Overlay */
 .overlay {
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay to enhance text visibility */
     width: 100%;
     height: 100%;
     display: flex;
@@ -33,33 +34,36 @@
 /* Centered Content Box */
 .container {
     background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
-    padding: 30px;
+    padding: 30px 50px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Main Title */
 .main-title {
     color: black;
-    font-size: 2.5em;
+    font-size: 2.8em;
     font-weight: bold;
-    margin: 0;
+    margin-bottom: 10px;
 }
 
 /* Subtitle (Blog Link) */
 .subtitle {
     font-size: 1.5em;
-    margin-top: 10px;
+    font-weight: 500;
 }
 
 .blog-link {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .blog-link:hover {
-    text-decoration: underline;
+    background: rgba(0, 0, 0, 0.7);
 }
 
 /* === BLOG PAGE STYLES === */
@@ -69,7 +73,7 @@ body.dark-theme {
     background-color: #121212;
     color: white;
     font-family: 'Poppins', sans-serif;
-    text-align: left; /* Ensuring all content is left-aligned */
+    text-align: left;
     min-height: 100vh;
     padding: 20px 0;
 }
@@ -110,7 +114,7 @@ body.dark-theme {
 
 /* Sidebar for Overview and Sections */
 .sidebar {
-    width: 80%; /* Take up 80% of the screen width */
+    width: 80%;
     padding: 20px;
 }
 
@@ -186,7 +190,7 @@ body.dark-theme {
 .code-container code {
     font-family: 'Courier New', monospace;
     display: block;
-    color: #dcdcaa; /* Default color for text */
+    color: #dcdcaa;
 }
 
 /* Copy Button */
