@@ -260,3 +260,18 @@ body.dark-theme {
 .run-btn:hover {
     background-color: #218838;
 }
+h3 {
+    margin-top: 20px;
+    color: #2c3e50;
+}
+
+ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 16px;
+    padding: 5px 0;
+}
+
