@@ -7,7 +7,8 @@
     box-sizing: border-box;
 }
 
-body {
+/* Light Theme (ONLY for index.html) */
+body:not(.dark-theme) {
     background: url('https://assets.telegraphindia.com/telegraph/2022/Jun/1656577304_iitgn-solar.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
