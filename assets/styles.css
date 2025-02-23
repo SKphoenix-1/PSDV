@@ -168,30 +168,58 @@ body.dark-theme {
 
 /* Code Container */
 /* Code Container Styling */
+/* Code Container */
 .code-container {
     position: relative;
-    background-color: #1e1e1e; /* Dark background like VS Code */
+    background-color: #1e1e1e; /* VS Code Dark Theme */
     color: #dcdcdc;
     border-radius: 8px;
     padding: 15px;
     margin-top: 10px;
     overflow-x: auto;
     font-family: 'Fira Code', monospace;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #3c3c3c;
 }
 
-/* Syntax Highlighting */
+/* Custom Scrollbar */
+.code-container::-webkit-scrollbar {
+    height: 8px;
+}
+.code-container::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+.code-container::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Syntax Highlighting using Prism.js */
+pre[class*="language-"] {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Code block styles */
 .code-container code {
     font-size: 16px;
     display: block;
     white-space: pre-wrap;
 }
 
-/* Different colors for different code elements */
-.code-container .keyword { color: #569cd6; } /* Keywords like function, var */
-.code-container .string { color: #ce9178; }  /* Strings */
-.code-container .comment { color: #6a9955; font-style: italic; } /* Comments */
-.code-container .number { color: #b5cea8; } /* Numbers */
-.code-container .function { color: #dcdcaa; } /* Function names */
+/* Prism.js Syntax Highlighting Colors */
+.token.keyword { color: #569cd6; }   /* Keywords (e.g., function, return) */
+.token.string { color: #ce9178; }    /* Strings */
+.token.number { color: #b5cea8; }    /* Numbers */
+.token.comment { color: #6a9955; font-style: italic; } /* Comments */
+.token.function { color: #dcdcaa; }  /* Function names */
+.token.operator { color: #d4d4d4; }  /* Operators */
+.token.punctuation { color: #d4d4d4; } /* Punctuation */
+.token.variable { color: #9cdcfe; }  /* Variables */
+.token.class-name { color: #4ec9b0; } /* Class Names */
+.token.property { color: #9cdcfe; }  /* Properties */
+.token.tag { color: #569cd6; }       /* HTML Tags */
 
 /* Clipboard Copy Button */
 .copy-btn {
