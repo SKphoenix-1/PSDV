@@ -68,14 +68,23 @@ body.dark-theme {
     padding: 20px 0; /* Adjust padding to move content up */
 }
 
-/* Title & Subtitle Styling */
-.dark-theme .main-title {
-    font-size: 50px;
-    font-weight: bold;
-    color: white;
-    margin-top: 20px; /* Ensure it's near the top */
+/* Title & Logo in One Line */
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Space between title and logo */
 }
 
+/* Main Title in Blog */
+.dark-theme .main-title {
+    font-size: 42px;  /* Slightly smaller */
+    font-weight: bold;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Subtitle */
 .dark-theme .subtitle {
     font-size: 24px;
     font-weight: 300;
@@ -85,9 +94,6 @@ body.dark-theme {
 
 /* Cytoscape.js Logo */
 .cytoscape-logo {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 80px;  /* Adjust size as needed */
+    width: 60px;  /* Adjusted size */
     height: auto;
 }
