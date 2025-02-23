@@ -227,6 +227,107 @@ console.log(cytoscape);</code></pre>
             </ul>
             <div class="output-container"></div>
 
+            <h3 class="subheading">2️⃣ Interactive Graph with Click Events</h3>
+            <ul>
+                <li>Click on a node to display an alert with its name.</li>
+                <li>Nodes are styled with a blue background and white labels.</li>
+                <li>Edges have arrows and are styled in gray.</li>
+            </ul>
+            
+            <h4>Example: Clickable Nodes</h4>
+            <div class="code-container">
+                <button class="copy-btn">Copy</button>
+                <button class="run-btn">Run</button>
+                <pre><code class="language-html">
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                &lt;title>Cytoscape.js Click Event Example&lt;/title&gt;
+                &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.24.0/cytoscape.min.js"&gt;&lt;/script&gt;
+                &lt;style&gt;
+                    #cy {
+                        width: 600px;
+                        height: 400px;
+                        border: 1px solid black;
+                    }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            
+                &lt;h2>Cytoscape.js Click Event Example&lt;/h2&gt;
+                &lt;div id="cy"&gt;&lt;/div&gt;
+            
+                &lt;script&gt;
+                    // Initialize Cytoscape
+                    var cy = cytoscape({
+                        container: document.getElementById('cy'), // Graph container
+                        
+                        elements: [ // Define nodes and edges
+                            { data: { id: 'A' } },
+                            { data: { id: 'B' } },
+                            { data: { id: 'C' } },
+                            { data: { id: 'D' } },
+                            { data: { id: 'E' } },
+                            { data: { id: 'AB', source: 'A', target: 'B' } },
+                            { data: { id: 'BC', source: 'B', target: 'C' } },
+                            { data: { id: 'CD', source: 'C', target: 'D' } },
+                            { data: { id: 'DE', source: 'D', target: 'E' } }
+                        ],
+            
+                        style: [ // Styling for nodes and edges
+                            {
+                                selector: 'node',
+                                style: {
+                                    'background-color': '#3498db',
+                                    'label': 'data(id)',
+                                    'color': 'white',
+                                    'text-valign': 'center',
+                                    'text-halign': 'center',
+                                    'font-size': '14px'
+                                }
+                            },
+                            {
+                                selector: 'edge',
+                                style: {
+                                    'width': 2,
+                                    'line-color': '#95a5a6',
+                                    'target-arrow-shape': 'triangle',
+                                    'target-arrow-color': '#95a5a6'
+                                }
+                            }
+                        ],
+            
+                        layout: {
+                            name: 'grid',
+                            rows: 2
+                        }
+                    });
+            
+                    // Click event listener for nodes
+                    cy.on('tap', 'node', function(evt){
+                        var node = evt.target;
+                        alert('You clicked on ' + node.id());
+                    });
+                &lt;/script&gt;
+            
+            &lt;/body&gt;
+            &lt;/html&gt;
+                </code></pre>
+                <div class="output-container"></div>
+            </div>
+            
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><strong>Cytoscape.js Library:</strong> Included via CDN (`cytoscape.min.js`).</li>
+                <li><strong>Graph Container:</strong> The `<div id="cy">` holds the graph.</li>
+                <li><strong>Graph Elements:</strong> Nodes (A–E) and edges are pre-defined.</li>
+                <li><strong>Styling:</strong> Blue nodes with white text, gray edges with arrows.</li>
+                <li><strong>Layout:</strong> Uses a **grid layout** for organized node placement.</li>
+                <li><strong>Click Event (tap):</strong> Clicking a node triggers an **alert** showing its ID.</li>
+            </ul>
+
         </section>
     </main>
 
