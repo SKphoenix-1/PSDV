@@ -114,8 +114,8 @@ body.dark-theme {
 
 /* Sidebar for Overview and Sections */
 .sidebar {
-    width: 80%;
-    padding: 20px;
+    width: 100%;
+    padding: 40px;
 }
 
 /* Section Headings */
