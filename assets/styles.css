@@ -68,12 +68,13 @@ body.dark-theme {
     padding: 20px 0; /* Adjust padding to move content up */
 }
 
-/* Title & Logo in One Horizontal Line */
+/* Header Container for Main Title & Logo */
 .header-container {
     display: flex;
-    justify-content: center; /* Center both items */
+    justify-content: center; /* Center horizontally */
     align-items: center;
     gap: 15px; /* Space between title and logo */
+    margin-bottom: 10px; /* Adds space below the header */
 }
 
 /* Main Title in Blog */
@@ -81,6 +82,7 @@ body.dark-theme {
     font-size: 42px;  /* Slightly smaller */
     font-weight: bold;
     color: white;
+    margin: 0; /* Removes unnecessary margin */
 }
 
 /* Subtitle */
