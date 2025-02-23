@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     copyButtons.forEach(button => {
         button.addEventListener("click", function () {
-            const codeBlock = this.nextElementSibling.innerText;
+            const codeBlock = this.nextElementSibling.textContent;
             navigator.clipboard.writeText(codeBlock).then(() => {
                 this.innerText = "Copied!";
                 setTimeout(() => {
