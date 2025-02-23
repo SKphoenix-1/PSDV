@@ -274,4 +274,15 @@ ul li {
     font-size: 16px;
     padding: 5px 0;
 }
+.indented {
+    display: inline-block;
+    margin-left: 20px; /* Adjust indentation */
+}
 
+h3 {
+    margin-top: 20px; /* Space after each heading */
+}
+
+ul {
+    margin-bottom: 20px; /* Space between different use case sections */
+}
