@@ -8,7 +8,7 @@
 }
 
 /* Light Theme (ONLY for index.html) */
-body:not(.dark-theme) {
+body.homepage {
     background: url('https://assets.telegraphindia.com/telegraph/2022/Jun/1656577304_iitgn-solar.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
@@ -24,10 +24,13 @@ body:not(.dark-theme) {
     border-radius: 10px;
 }
 
+.main-title, .subtitle {
+    font-weight: 600;
+}
+
 .main-title {
     font-size: 50px;
     color: black;
-    font-weight: 600;
 }
 
 .subtitle {
@@ -54,26 +57,29 @@ body:not(.dark-theme) {
     background-color: #333;
 }
 
-/* Dark Theme Background */
-.dark-theme {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 30px; /* Push content towards the top */
+/* ------------------------ */
+/* Dark Theme (ONLY for blog.html) */
+body.dark-theme {
+    background-color: #121212;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
     min-height: 100vh;
+    padding: 20px 0; /* Adjust padding to move content up */
 }
 
 /* Title & Subtitle Styling */
-.main-title {
+.dark-theme .main-title {
     font-size: 50px;
     font-weight: bold;
-    margin: 10px 0;
+    margin-top: 20px; /* Ensure it's near the top */
 }
 
-.subtitle {
+.dark-theme .subtitle {
     font-size: 24px;
     font-weight: 300;
     color: #bbbbbb;
+    margin-bottom: 20px;
 }
 
 /* Cytoscape.js Logo */
@@ -84,18 +90,3 @@ body:not(.dark-theme) {
     width: 80px;  /* Adjust size as needed */
     height: auto;
 }
-
-/* Main Title */
-.main-title {
-    font-size: 50px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* Subtitle */
-.subtitle {
-    font-size: 24px;
-    font-weight: 300;
-    color: #bbbbbb; /* Slightly gray for a subtle effect */
-}
-
