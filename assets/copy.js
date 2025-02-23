@@ -1,17 +1,12 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const copyButtons = document.querySelectorAll(".copy-btn");
-
-    copyButtons.forEach(button => {
-        button.innerHTML = "📋"; // Clipboard icon by default
-
-        button.addEventListener("click", function () {
-            const codeBlock = this.nextElementSibling.textContent;
-            navigator.clipboard.writeText(codeBlock).then(() => {
-                this.innerHTML = "✔️"; // Change to checkmark on success
-                setTimeout(() => {
-                    this.innerHTML = "📋"; // Revert back after 2 sec
-                }, 2000);
-            }).catch(err => console.error("Error copying text: ", err));
-        });
+document.querySelectorAll(".copy-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        let codeBlock = this.closest(".code-container").querySelector("pre code"); // Select the correct code block
+        let text = codeBlock.innerText; // Get the code text
+        navigator.clipboard.writeText(text).then(() => {
+            this.innerText = "Copied!";
+            setTimeout(() => {
+                this.innerText = "Copy";
+            }, 1500);
+        }).catch(err => console.error("Failed to copy:", err));
     });
 });
