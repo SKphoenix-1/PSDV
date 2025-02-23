@@ -74,119 +74,157 @@ console.log(cytoscape);</code></pre>
             <h2 class="section-heading">Key Features and Explanation</h2>
 
             <h3 class="subheading">1️⃣ Graph Visualization & Layouts</h3>
-            <p>Supports various graph layouts (grid, circle, breadth-first, etc.). Provides real-time updates and animations.</p>
-
-            <h4>Example: Draggable Nodes</h4>
+            <ul>
+                <li>Supports various graph layouts (grid, circle, breadth-first, etc.).</li>
+                <li>Provides real-time updates and animations.</li>
+            </ul>
+            
+            <h4>Example 1: Draggable Node</h4>
             <div class="code-container">
                 <button class="copy-btn">Copy</button>
                 <button class="run-btn">Run</button>
                 <pre><code class="language-html">
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.24.0/cytoscape.min.js"&gt;&lt;/script&gt;
-    &lt;style&gt; #cy { width: 100%; height: 500px; border: 1px solid black; } &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div id="cy"&gt;&lt;/div&gt;
-    &lt;script&gt;
-        var cy = cytoscape({
-            container: document.getElementById('cy'),
-            elements: [
-                { data: { id: 'A' } },
-                { data: { id: 'B' } },
-                { data: { id: 'AB', source: 'A', target: 'B' } }
-            ],
-            style: [
-                { selector: 'node', style: { 'background-color': '#007bff', 'label': 'data(id)', 'color': '#fff' } }
-            ],
-            layout: { name: 'grid' }
-        });
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            &lt;head&gt;
+                &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.24.0/cytoscape.min.js"&gt;&lt;/script&gt;
+                &lt;style&gt; #cy { width: 100%; height: 500px; border: 1px solid black; } &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;div id="cy"&gt;&lt;/div&gt;
+                &lt;script&gt;
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var cy = cytoscape({
+                            container: document.getElementById('cy'),
+                            elements: [
+                                { data: { id: 'A' }, position: { x: 100, y: 200 } },
+                                { data: { id: 'B' }, position: { x: 300, y: 100 } },
+                                { data: { id: 'C' }, position: { x: 500, y: 200 } },
+                                { data: { id: 'AB', source: 'A', target: 'B' } },
+                                { data: { id: 'BC', source: 'B', target: 'C' } },
+                                { data: { id: 'CA', source: 'C', target: 'A' } }
+                            ],
+                            style: [{ selector: 'node', style: { 'background-color': '#007bff', 'label': 'data(id)', 'color': '#fff' } }],
+                            layout: { name: 'preset' }
+                        });
+                        cy.nodes().forEach(node => node.grabbable(true));
+                    });
+                &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
                 </code></pre>
+                <div class="output-container"></div>
             </div>
-            <div class="output-container"></div>
-
-            <h3 class="subheading">2️⃣ Styling & Customization</h3>
-            <p>Modify node colors, edge styles, and graph themes dynamically.</p>
-
-            <h4>Example: Custom Node Styles</h4>
+            <p><strong>Explanation:</strong> The code creates an interactive graph using Cytoscape.js, displaying three nodes (A, B, C) connected by edges in a triangular layout. Nodes are blue with white labels, and edges are gray with arrows. The graph allows dragging nodes, as well as zooming and panning for better exploration. The layout is preset, meaning nodes start at fixed positions but can be moved freely.</p>
+            
+            <h4>Example 2: Adding and Removing Nodes</h4>
             <div class="code-container">
                 <button class="copy-btn">Copy</button>
                 <button class="run-btn">Run</button>
                 <pre><code class="language-html">
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.24.0/cytoscape.min.js"&gt;&lt;/script&gt;
-    &lt;style&gt; #cy { width: 100%; height: 500px; border: 1px solid black; } &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div id="cy"&gt;&lt;/div&gt;
-    &lt;script&gt;
-        var cy = cytoscape({
-            container: document.getElementById('cy'),
-            elements: [
-                { data: { id: 'X' } },
-                { data: { id: 'Y' } },
-                { data: { id: 'XY', source: 'X', target: 'Y' } }
-            ],
-            style: [
-                { selector: 'node', style: { 'background-color': '#ff5733', 'label': 'data(id)', 'color': '#fff', 'shape': 'hexagon' } },
-                { selector: 'edge', style: { 'line-color': '#ffbd69', 'width': 4, 'target-arrow-shape': 'triangle' } }
-            ],
-            layout: { name: 'circle' }
-        });
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            &lt;head&gt;
+                &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.21.0/cytoscape.min.js"&gt;&lt;/script&gt;
+                &lt;style&gt; #cy { width: 100%; height: 500px; border: 1px solid black; } &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;button onclick="addNode()"&gt;Add Node&lt;/button&gt;
+                &lt;button onclick="removeNode()"&gt;Remove Node&lt;/button&gt;
+                &lt;div id="cy"&gt;&lt;/div&gt;
+                &lt;script&gt;
+                    let count = 1;
+                    let cy = cytoscape({
+                        container: document.getElementById('cy'),
+                        elements: [{ data: { id: 'A' } }],
+                        style: [{ selector: 'node', style: { 'background-color': 'green', 'label': 'data(id)', 'color': 'white' } }],
+                        layout: { name: 'grid' }
+                    });
+            
+                    function addNode() {
+                        let newId = 'N' + count++;
+                        cy.add({ data: { id: newId } });
+                        cy.layout({ name: 'grid', animate: true }).run();
+                    }
+            
+                    function removeNode() {
+                        let nodes = cy.nodes();
+                        if (nodes.length > 0) nodes[nodes.length - 1].remove();
+                    }
+                &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
                 </code></pre>
+                <div class="output-container"></div>
             </div>
-            <div class="output-container"></div>
-
-            <h3 class="subheading">3️⃣ Interactive Features</h3>
-            <p>Add user interactions like selecting, dragging, and clicking on nodes.</p>
-
-            <h4>Example: Click Event on Nodes</h4>
+            <p><strong>Explanation:</strong> The code creates a dynamic interactive graph using Cytoscape.js, allowing users to add and remove nodes dynamically.</p>
+            <ul>
+                <li><strong>Graph Container:</strong> A div (#cy) displays the graph.</li>
+                <li><strong>Initial Setup:</strong> The graph starts with one green node (“A”) in a grid layout.</li>
+                <li><strong>Buttons for Interaction:</strong></li>
+                <ul>
+                    <li>“Add Node”: Adds a new node (N1, N2, ...) with a unique ID and re-arranges the layout.</li>
+                    <li>“Remove Node”: Deletes the last-added node.</li>
+                </ul>
+                <li><strong>Styling:</strong> Nodes are green with white labels.</li>
+                <li><strong>Interactivity:</strong> Users can dynamically modify the graph by adding or removing nodes, and the layout updates automatically.</li>
+            </ul>
+            
+            <h4>Example 3: Dynamic Switching Between Different Layouts</h4>
             <div class="code-container">
                 <button class="copy-btn">Copy</button>
                 <button class="run-btn">Run</button>
                 <pre><code class="language-html">
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.24.0/cytoscape.min.js"&gt;&lt;/script&gt;
-    &lt;style&gt; #cy { width: 100%; height: 500px; border: 1px solid black; } &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div id="cy"&gt;&lt;/div&gt;
-    &lt;script&gt;
-        var cy = cytoscape({
-            container: document.getElementById('cy'),
-            elements: [
-                { data: { id: '1' } },
-                { data: { id: '2' } },
-                { data: { id: '12', source: '1', target: '2' } }
-            ],
-            style: [
-                { selector: 'node', style: { 'background-color': '#28a745', 'label': 'data(id)', 'color': '#fff' } }
-            ],
-            layout: { name: 'grid' }
-        });
-
-        cy.on('tap', 'node', function(evt) {
-            alert('You clicked on node: ' + evt.target.id());
-        });
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            &lt;head&gt;
+                &lt;script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"&gt;&lt;/script&gt;
+                &lt;style&gt; #cy { width: 90vw; height: 70vh; border: 2px solid #ccc; background: white; } &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;button onclick="setLayout('grid')"&gt;Grid&lt;/button&gt;
+                &lt;button onclick="setLayout('circle')"&gt;Circular&lt;/button&gt;
+                &lt;button onclick="setLayout('breadthfirst')"&gt;Linear&lt;/button&gt;
+                &lt;div id="cy"&gt;&lt;/div&gt;
+                &lt;script&gt;
+                    let cy = cytoscape({
+                        container: document.getElementById('cy'),
+                        elements: [
+                            { data: { id: 'A' } }, { data: { id: 'B' } },
+                            { data: { source: 'A', target: 'B' } }
+                        ],
+                        style: [{ selector: 'node', style: { 'background-color': '#007bff', 'label': 'data(id)', 'color': '#fff' } }],
+                        layout: { name: 'grid' }
+                    });
+            
+                    function setLayout(layoutName) {
+                        cy.layout({ name: layoutName }).run();
+                    }
+                &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
                 </code></pre>
+                <div class="output-container"></div>
             </div>
+            <p><strong>Explanation:</strong> The code creates an interactive graph using Cytoscape.js, allowing users to switch between different node layouts dynamically.</p>
+            <ul>
+                <li><strong>Graph Setup:</strong></li>
+                <ul>
+                    <li>Contains 8 nodes (A to H) connected by edges.</li>
+                    <li>Nodes are blue with white labels and circular in shape.</li>
+                    <li>Edges are gray with arrowheads.</li>
+                </ul>
+                <li><strong>Layout Switching:</strong></li>
+                <ul>
+                    <li>Three buttons allow users to change the node arrangement:</li>
+                    <ul>
+                        <li>Grid Layout (Green Button) 🟩</li>
+                        <li>Circular Layout (Blue Button) 🔵</li>
+                        <li>Linear (Breadth-First) Layout (Orange Button) 🟠</li>
+                    </ul>
+                </ul>
+                <li><strong>Interactivity:</strong> Clicking a button updates the graph’s structure in real-time. 🚀</li>
+            </ul>
             <div class="output-container"></div>
 
         </section>
