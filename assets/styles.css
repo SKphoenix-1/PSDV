@@ -1,3 +1,62 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+}
+
+.main-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.cytoscape-logo {
+    width: 120px;
+    margin-top: 10px;
+}
+
+/* Content */
+.content {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #252526;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Sidebar */
+.sidebar {
+    padding: 15px;
+}
+
+/* Section Headings */
+.section-heading {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff9800;
+    margin-top: 20px;
+}
+
+/* Subheading */
+.subheading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #66ccff;
+}
+
+/* Code Blocks */
 .code-container {
     position: relative;
     background-color: #2d2d2d;
@@ -6,8 +65,19 @@
     border-radius: 5px;
     margin-top: 10px;
     overflow-x: auto;
+    font-size: 14px;
 }
 
+/* Syntax Highlighting */
+pre {
+    margin: 0;
+}
+
+code {
+    font-family: 'Courier New', monospace;
+}
+
+/* Copy Button */
 .copy-btn {
     position: absolute;
     top: 10px;
@@ -19,8 +89,40 @@
     cursor: pointer;
     font-size: 12px;
     border-radius: 3px;
+    transition: background 0.3s ease;
 }
 
 .copy-btn:hover {
     background: #e68900;
+}
+
+/* Divider */
+.divider {
+    height: 2px;
+    background-color: #444;
+    border: none;
+    margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .main-title {
+        font-size: 28px;
+    }
+
+    .cytoscape-logo {
+        width: 100px;
+    }
+
+    .copy-btn {
+        top: 5px;
+        right: 5px;
+        padding: 4px 8px;
+        font-size: 10px;
+    }
 }
