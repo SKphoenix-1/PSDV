@@ -87,6 +87,12 @@ body.dark-theme {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     text-align: center;
     margin-top: 20px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent box */
+    border: 2px solid #f1c40f; /* Gold border */
+    box-shadow: 0 0 15px rgba(241, 196, 15, 0.7); /* Glowing effect */
+    display: inline-block;
 }
 
 /* Blog Subtitle */
