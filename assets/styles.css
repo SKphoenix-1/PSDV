@@ -107,8 +107,8 @@ body.dark-theme {
 /* Cytoscape.js Logo in Right Corner */
 .cytoscape-logo {
     position: absolute;
-    top: 40px;
-    right: 40px;
+    top: 60px;
+    right: 60px;
     width: 60px;
     height: auto;
     transform: scale(1.5);
