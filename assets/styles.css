@@ -310,4 +310,14 @@ ul {
     border-bottom: 3px solid #1E90FF; /* Blue underline */
     padding-bottom: 5px;
 }
-
+.emerald-green-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    background: linear-gradient(to right, #008000, #20B2AA); /* Green-Teal Gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    border-bottom: 3px solid #008000; /* Green Underline */
+    padding-bottom: 5px;
+}
