@@ -277,3 +277,16 @@ h3 {
 ul {
     margin-bottom: 20px; /* Space between different use case sections */
 }
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    background: linear-gradient(to right, #FFD700, #FF8C00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    border-bottom: 3px solid #FFD700; /* Gold underline */
+    padding-bottom: 5px;
+}
+}
