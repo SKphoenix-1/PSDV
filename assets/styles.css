@@ -302,12 +302,12 @@ ul {
 .deep-maroon-heading {
     font-family: 'Playfair Display', serif;
     font-weight: bold;
-    background: linear-gradient(to right, #800000, #A52A2A); /* Deep Maroon Gradient */
+    background: linear-gradient(to right, #1E90FF, #00BFFF); /* Dark to Light Blue */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     display: inline-block;
-    border-bottom: 3px solid #800000; /* Maroon Underline */
+    border-bottom: 3px solid #1E90FF; /* Blue underline */
     padding-bottom: 5px;
 }
 
