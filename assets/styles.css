@@ -107,8 +107,8 @@ body.dark-theme {
 /* Cytoscape.js Logo in Right Corner */
 .cytoscape-logo {
     position: absolute;
-    top: 75px;
-    right: 75px;
+    top: 83px;
+    right: 83px;
     width: 60px;
     height: auto;
     transform: scale(1.5);
@@ -182,39 +182,75 @@ body.dark-theme {
     border-top: 2px solid grey;
     margin: 25px 0;
 }
-/* Ocean Wave Code Block */
+
 .code-container {
     position: relative;
-    background: linear-gradient(to right, #003366, #0066cc);
+    background-color: #1e1e1e; /* Dark background like VS Code */
+    color: #dcdcdc;
     border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 102, 204, 0.7);
+    padding: 15px;
+    margin-top: 10px;
+    overflow-x: auto;
+    font-family: 'Fira Code', monospace;
 }
 
-/* Clipboard Button */
+/* Syntax Highlighting */
+.code-container code {
+    font-size: 16px;
+    display: block;
+    white-space: pre-wrap;
+}or: #00ffee; } /* Attribute Values */
+
+/* Clipboard Copy Button */
 .copy-btn {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: none;
+    background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: 16px;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background 0.3s, color 0.3s;
+    font-size: 18px;
+    color: white;
 }
 
 .copy-btn:hover {
-    color: #00c3ff;
+    color: #bbbbbb;
 }
 
-/* Copied! Text */
-.copy-btn.copied {
-    color: #ffcc00;
-    font-weight: bold;
+/* Code Blocks */
+.code-container pre {
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
+
+/* Syntax Highlighting */
+.code-container code {
+    font-family: 'Courier New', monospace;
+    display: block;
+    color: #dcdcaa;
+}
+
+/* Copy Button */
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.copy-btn:hover {
+    background-color: #666;
+}
+
 .run-btn {
     background-color: #28a745; /* Green color */
     color: white;
