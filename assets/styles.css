@@ -279,10 +279,10 @@ ul {
     margin-bottom: 20px; /* Space between different use case sections */
 }
 
-h2 {
+.fancy-heading {
     font-family: 'Playfair Display', serif;
     font-weight: bold;
-    background: linear-gradient(to right, #FFD700, #FF8C00);
+    background: linear-gradient(to right, #FFD700, #FF8C00); /* Gold to Orange Gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
