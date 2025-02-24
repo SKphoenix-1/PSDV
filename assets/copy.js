@@ -1,4 +1,3 @@
-
 document.querySelectorAll(".copy-btn").forEach(button => {
     button.addEventListener("click", function () {
         let codeBlock = this.closest(".code-container").querySelector("pre code"); // Select the correct code block
