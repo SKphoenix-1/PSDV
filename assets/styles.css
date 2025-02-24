@@ -327,3 +327,10 @@ ul {
     border-bottom: 3px solid #008000; /* Green Underline */
     padding-bottom: 5px;
 }
+header {
+    display: flex; 
+    align-items: center; /* Align title and image vertically */
+    justify-content: center; /* Center the entire header content */
+    gap: 15px; /* Space between title and image */
+    padding: 20px;
+}
