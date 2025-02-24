@@ -123,9 +123,17 @@ body.dark-theme {
 /* Section Headings */
 .section-heading {
     font-size: 26px;
-    font-weight: bold;
     color: white;
     margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    background: linear-gradient(to right, #FFD700, #FF8C00); /* Gold to Orange Gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    border-bottom: 3px solid #FFD700; /* Gold underline */
+    padding-bottom: 5px;
 }
 
 /* Subheading */
