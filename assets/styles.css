@@ -299,3 +299,15 @@ ul {
     padding-bottom: 5px;
 }
 
+.deep-maroon-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    background: linear-gradient(to right, #800000, #A52A2A); /* Deep Maroon Gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    border-bottom: 3px solid #800000; /* Maroon Underline */
+    padding-bottom: 5px;
+}
+
