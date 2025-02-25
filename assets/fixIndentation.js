@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .map(line => line.match(/^ */)[0].length) // Find leading spaces
         );
 
-        // Remove common indentation from all lines
+        // Remove common indentation from all line
         let formattedCode = lines.map(line => line.slice(minIndent)).join("\n");
 
         // Preserve code formatting safely
