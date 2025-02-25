@@ -336,3 +336,10 @@ header {
     gap: 15px; /* Space between title and image */
     padding: 20px;
 }
+pre code {
+    display: block;
+    white-space: pre-wrap;  /* Preserve line breaks but remove extra spaces */
+    word-wrap: break-word;
+    padding: 10px;
+    margin: 0;
+}
